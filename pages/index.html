@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Quote Generator</title>
     <meta name="authors" content="JoaoBett">
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="../img/cartoon_quote.jpg">
     <!--Javascript-->
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
     <!--   -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -23,17 +22,17 @@
                     <div class="bg-gray-400 rounded-lg p-4">
                         <div class="mb-5">
                             <div class="flex justify-start items-center px-3 py-2">
-                                <p>A new life...</p>
+                                <p id="quoteText">A new life...</p>
                             </div>
                             <div class="flex justify-end items-center">
-                                <p>By: Me</p>
+                                <p id="quoteAuthor">By: Me</p>
                             </div>
                         </div>
                         <div>
                             <button class="bg-purple-500 text-white p-2 rounded-lg" onclick="getQuote()">New Quote</button>
                             <button class="bg-sky-400 text-white p-2 rounded-lg" onclick="copyQuote()">Copy Quote</button>
-                            <button class="bg-black text-white p-2 rounded-lg">X Quote</button>
-                            <button class="bg-red-600 text-white p-2 rounded-lg">Youtube Video</button>
+                            <button class="bg-black text-white p-2 rounded-lg" onclick="xQuote()">X Quote</button>
+                            <button class="bg-red-600 text-white p-2 rounded-lg" onclick="youtubeVideo()">Youtube Video</button>
                         </div>
                 </div>
             </div>
