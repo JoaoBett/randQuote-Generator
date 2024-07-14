@@ -1,3 +1,4 @@
+//Generate a new quote
 async function getQuote() {
   try {
     const response = await fetch("https://api.quotable.io/random");
@@ -20,14 +21,30 @@ async function copyQuote(){
   try{
     const quoteText = document.getElementById("quoteText");
     const quoteAuthor = document.getElementById("quoteAuthor");
-    await navigator.clipboard.writeText(`${quoteText.textContent - quoteAuthor.textContent}`);
+    await navigator.clipboard.writeText(`${quoteText.textContent} - ${quoteAuthor.textContent}`);
   } catch (error) {
     console.log("Failed to copy quote", error);
   }
 }
 
-const buttonNewQuote = document.querySelector("button");
-buttonNewQuote.addEventListener("click", getQuote);
+//Twitter Quote
+async function xQuote(){
+  try{
+    const quoteText = document.getElementById("quoteText");
+    const copyText = quoteText.textContent;
+    window.open(`https://twitter.com/intent/tweet?text=${copyText}`);
+  } catch (error) {
+    console.log("Failed to go into X", error);
+  }
+}
 
-const buttonCopyQuote = document.getElementById("button");
-buttonCopyQuote.addEventListener("click", copyQuote);
+document.addEventListener("DOMContentLoaded", () => {
+  const buttonNewQuote = document.getElementById("newQuote");
+  buttonNewQuote.addEventListener("click", getQuote);
+
+  const buttonCopyQuote = document.getElementById("copyQuote");
+  buttonCopyQuote.addEventListener("click", copyQuote);
+
+  const buttonXQuote = document.getElementById("xQuote");
+  buttonXQuote.addEventListener("click", xQuote);
+});
