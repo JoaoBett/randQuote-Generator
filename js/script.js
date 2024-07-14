@@ -38,6 +38,17 @@ async function xQuote(){
   }
 }
 
+//Youtube Video related to the quote
+async function youtubeVideo(){
+  try{
+    const quoteText = document.getElementById("quoteText");
+    const copyText = quoteText.textContent;
+    window.open(`https://www.youtube.com/results?search_query=${copyText}`);
+  } catch (error) {
+    console.log("Failed to go into Youtube", error);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const buttonNewQuote = document.getElementById("newQuote");
   buttonNewQuote.addEventListener("click", getQuote);
@@ -47,4 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const buttonXQuote = document.getElementById("xQuote");
   buttonXQuote.addEventListener("click", xQuote);
+
+  const buttonYoutube = document.getElementById("youtubeVideo");
+  buttonYoutube.addEventListener("click", youtubeVideo);
 });
