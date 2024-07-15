@@ -17,4 +17,4 @@ Use the "Tweet Quote", "Copy Quote", "YouTube Search" and "ProfileIcon" buttons 
 
 ## API
 
-Thanks to [Quotable][https://github.com/lukePeavey/quotable] for providing the API used in this project.
+Thanks to [Quotable](https://github.com/lukePeavey/quotable) for providing the API used in this project.
