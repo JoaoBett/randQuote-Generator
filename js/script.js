@@ -1,3 +1,12 @@
+const getAuthorSlug = (author) => {
+  return author.toLowerCase().replace(/ /g, '-');
+}
+
+const getProfileURL = (author, size = 200) => {
+  const IMAGE_BASE = 'https://images.quotable.dev/profile';
+  const authorSlug = getAuthorSlug(author);
+  return `${IMAGE_BASE}/${size}/${authorSlug}.jpg`;
+}
 //Generate a new quote
 async function getQuote() {
   try {
@@ -8,9 +17,10 @@ async function getQuote() {
     const quote = await response.json();
     const quoteText = document.getElementById("quoteText");
     const quoteAuthor = document.getElementById("quoteAuthor");
-
-    const icon = document.getElementById("profile-icon");
-
+    const profileIcon = document.getElementById("profile-icon");
+    
+    profileIcon.src = getProfileURL(quote.author);
+  
     quoteText.textContent = `"${quote.content}"`;
     quoteAuthor.textContent = `By: ${quote.author}`;
   } catch (error) {
