@@ -9,6 +9,8 @@ async function getQuote() {
     const quoteText = document.getElementById("quoteText");
     const quoteAuthor = document.getElementById("quoteAuthor");
 
+    const icon = document.getElementById("profile-icon");
+
     quoteText.textContent = `"${quote.content}"`;
     quoteAuthor.textContent = `By: ${quote.author}`;
   } catch (error) {
@@ -61,4 +63,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const buttonYoutube = document.getElementById("youtubeVideo");
   buttonYoutube.addEventListener("click", youtubeVideo);
+  
+  //Profile Icon into Wikipedia
+  const profileIcon = document.getElementById("profile-icon");
+  profileIcon.addEventListener("click", () => {
+    const author = document.getElementById("quoteAuthor");
+    let authorText = author.textContent.trim();
+
+    if (authorText.startsWith("By: ")) {
+      authorText = authorText.slice(4).trim();
+    }
+
+    if (authorText === "Me") {
+      window.open("https://github.com/JoaoBett");
+    } else {
+      window.open(`https://en.wikipedia.org/wiki/${authorText}`);
+    }
+  });
+
+  //Author Name into Wikipedia
+  const authorName = document.getElementById("quoteAuthor");
+  authorName.addEventListener("click", () => {
+    const author = document.getElementById("quoteAuthor");
+    let authorName = author.textContent.trim();
+
+    if (authorName.startsWith("By: ")) {
+      authorName = authorName.slice(4).trim();
+    }
+
+    if (authorName === "Me") {
+      window.open("https://github.com/JoaoBett");
+    } else {
+      window.open(`https://en.wikipedia.org/wiki/${authorName}`);
+    }
+  });
 });
