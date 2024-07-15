@@ -14,3 +14,7 @@ This is a simple random quote generator. That I've made to practice some javascr
 
 Click the "New Quote" button to generate a random quote. 
 Use the "Tweet Quote", "Copy Quote", "YouTube Search" and "ProfileIcon" buttons for additional functionalities.
+
+## API
+
+Thanks to [Quotable][https://github.com/lukePeavey/quotable] for providing the API used in this project.
